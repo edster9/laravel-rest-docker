@@ -72,7 +72,7 @@ The project can be cloned from GitHub for free with the following command
 git clone https://github.com/edster9/laravel-rest-docker.git
 ```
 
-### Docker Setup
+### Docker Stack Setup
 After the project has been cloned from Git Repo it must be prepared for all 3rd party PHP/laravel libraries. This can be done using a temporary docker composer image that will self distruct after the setup.
 
 - Make sure you switch into the project directory first
@@ -92,7 +92,7 @@ docker-compose up
 
 - Test the stack by navigating to http://localhost:8080 and you should see the basic Laravel home page
 
-### Database Migrations
+### Docker Stack Database Migrations
 Now that the Docker stack is up and running a few database migration tasks must be executed so the MySQL database has some stock data to work with. In order to test the API with some pre-populated data, these migration steps take care of filling in some seed data for Projects, Tasks and a User that can be logged in.
 
 - Make sure you switch into the project directory first
@@ -106,6 +106,8 @@ docker-compose exec app php artisan migrate
 docker-compose exec app php artisan passport:install --force
 docker-compose exec app php artisan db:seed
 ```
+
+The API is not fully ready to rest. Please refer to [REST API Definitions](https://documenter.getpostman.com/view/762427/maverick/7TGjEcp#intro) for help on API usage.
 
 ### Docker Compose Control
 The Docker Compose stack can be controled using the following
@@ -131,8 +133,6 @@ docker-compose start
 ```
 docker-compose down
 ```
-
-
 
 ## Online API Definitions
 This is an online API map and example usage using a command line [curl] tool
