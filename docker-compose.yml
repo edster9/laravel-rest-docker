@@ -1,0 +1,38 @@
+version: '2'
+services:
+
+  app:
+    build:
+      context: ./
+      dockerfile: app.dockerfile
+    working_dir: /var/www
+    volumes:
+      - ./rest-app:/var/www
+    environment:
+      - "DB_PORT=3306"
+      - "DB_HOST=database"
+
+  web:
+    build:
+      context: ./
+      dockerfile: web.dockerfile
+    working_dir: /var/www
+    volumes_from:
+      - app
+    ports:
+      - 8080:80
+
+  database:
+    image: mysql:5.6
+    volumes:
+      - dbdata:/var/lib/mysql
+    environment:
+      - "MYSQL_DATABASE=maverick"
+      - "MYSQL_USER=maverick"
+      - "MYSQL_PASSWORD=maverick"
+      - "MYSQL_ROOT_PASSWORD=maverick"
+    ports:
+        - "33061:3306"
+
+volumes:
+  dbdata:
