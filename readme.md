@@ -1,7 +1,7 @@
 # [laravel-rest-docker](https://documenter.getpostman.com/view/762427/maverick/7TGjEcp#intro) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)]
 
 ## Introduction
-This project demonstrates a self contained docker environment for a sample Laravel REST api with passport authentication.
+This project demonstrates a self contained docker environment for a sample Laravel REST api with passport authentication. It domonstrates the ability to run a PHP/Laravel REST API server inside a Docker stack.
 
 ### API Overview 
 The API is a Project/Tasks/Users hierarchy design with a MySQL database to store all the object data.
@@ -85,12 +85,12 @@ cd laravel-rest-docker
 docker run --rm -v $(pwd)/rest-app:/app composer install
 ```
 
-- Bring up the stack using docker-compose. This will run all three containers you stack is now running
+- Bring up the stack using docker-compose. This will run all three containers.
 ```
 docker-compose up
 ```
 
-- Test the stack by navigating to http://localhost:8080 and you should see the basic Laravel home page
+-  Your stack is now running. Test the stack by navigating to http://localhost:8080 and you should see the basic Laravel home page
 
 ### Docker Stack Database Migrations
 Now that the Docker stack is up and running a few database migration tasks must be executed so the MySQL database has some stock data to work with. In order to test the API with some pre-populated data, these migration steps take care of filling in some seed data for Projects, Tasks and a User that can be logged in.
