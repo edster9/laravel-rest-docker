@@ -4,7 +4,7 @@
 This project demonstrates a self contained docker environment for a sample Laravel REST api with passport authentication.
 
 ### API Overview 
-The API is a Project/Tasks/Users heirarchy design with a MySQL database to store all the object data.
+The API is a Project/Tasks/Users hierarchy design with a MySQL database to store all the object data.
 
 All data access API's are projected so a valid user must be loggedin
 - POST localhost:8080/api/login 
@@ -35,7 +35,7 @@ git clone https://github.com/edster9/laravel-rest-docker.git
 ### Docker Setup
 After the project has been cloned from Git Repo it must be prepared for all 3rd party PHP/laravel libraries. This can be done using a temporary docker composer iamge that will self distruct after the setup.
 
-- Make sure you switch into the project directoy first
+- Make sure you switch into the project directory first
 ```
 cd laravel-rest-docker
 ```
@@ -55,7 +55,7 @@ docker-compose up
 ### Database Migrations
 Now that the Docker stack is up and running a few database migration tasks must be executed so the MySQL database has some stock data to work with. In order to test the API with some pre-populated data, these migration steps take care of filling in some seed data for Projects, Tasks and a User that can be logged in.
 
-- Make sure you switch into the project directoy first
+- Make sure you switch into the project directory first
 ```
 cd laravel-rest-docker
 ```
