@@ -107,7 +107,7 @@ docker-compose exec app php artisan passport:install --force
 docker-compose exec app php artisan db:seed
 ```
 
-The API is not fully ready to rest. Please refer to [REST API Definitions](https://documenter.getpostman.com/view/762427/maverick/7TGjEcp#intro) for help on API usage.
+The REST API is now fully ready to test. Please refer to [REST API Definitions](https://documenter.getpostman.com/view/762427/maverick/7TGjEcp#intro) for help on API usage.
 
 ### Docker Compose Control
 The Docker Compose stack can be controled using the following
