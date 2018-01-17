@@ -62,7 +62,9 @@ This test project is 100% self contained Docker stack and its only requirement i
 ## Instalation
 
 ### Requirements
-Any PC or MAC with Docker 17.x installed. There are no other requirements needed. All services are running inside Docker containers.
+- Any PC or MAC with Docker 17.x installed. 
+- Git command line tool
+- There are no needs for local web servers or databases
 
 ### Repo Install
 The project can be cloned from GitHub for free with the following command
