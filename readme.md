@@ -6,13 +6,51 @@ This project demonstrates a self contained docker environment for a sample Larav
 ### API Overview 
 The API is a Project/Tasks/Users hierarchy design with a MySQL database to store all the object data.
 
-All data access API's are projected so a valid user must be loggedin
-- POST localhost:8080/api/login 
+All data access API's are projected so a valid user must be loggedin (stock DB account or create your own using /api/register)
+```
+POST localhost:8080/api/login
+email: name1@maverick.com
+password: name1
+```
 
 Or a new user can be created
-- POST localhost:8080/api/register 
+```
+POST localhost:8080/api/register 
+```
 
 Refer to [REST API Definitions](https://documenter.getpostman.com/view/762427/maverick/7TGjEcp#intro) for help on API usage.
+
+### Full List of API
+```
+[ Auth API ]
+POST localhost:8080/api/login
+POST localhost:8080/api/get-details
+POST localhost:8080/api/register
+
+[ Projects CRUD ]
+GET localhost:8080/api/projects
+GET localhost:8080/api/project/[id]
+POST localhost:8080/api/project
+PUT localhost:8080/api/project
+DEL localhost:8080/api/project/[id]
+
+[ Tasks CRUD ]
+GET localhost:8080/api/tasks
+GET localhost:8080/api/tasks/[id]
+DEL localhost:8080/api/task
+POST localhost:8080/api/task
+PUT localhost:8080/api/task
+
+[ Tasks Query ]
+GET localhost:8080/api/tasks/byuserid/[user_id]
+GET localhost:8080/api/tasks/byprojectid/[project_id]
+GET localhost:8080/api/tasks/bypriority/[priority]
+GET localhost:8080/api/tasks/byduedate/[duedate]
+
+[ Tasks / User Opersations ]
+PUT localhost:8080/api/task/adduser/[task_id]/[user_id]
+DEL localhost:8080/api/task/removeuser/[task_id]/[user_id]
+```
 
 ### Tech Stack
 This test project is 100% self contained Docker stack and its only requirement is to have Docker engine installed on your machine.
