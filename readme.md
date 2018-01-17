@@ -33,7 +33,7 @@ git clone https://github.com/edster9/laravel-rest-docker.git
 ```
 
 ### Docker Setup
-After the project has been cloned from Git Repo it must be prepared for all 3rd party PHP/laravel libraries. This can be done using a temporary docker composer iamge that will self distruct after the setup.
+After the project has been cloned from Git Repo it must be prepared for all 3rd party PHP/laravel libraries. This can be done using a temporary docker composer image that will self distruct after the setup.
 
 - Make sure you switch into the project directory first
 ```
@@ -66,6 +66,33 @@ docker-compose exec app php artisan migrate
 docker-compose exec app php artisan passport:install --force
 docker-compose exec app php artisan db:seed
 ```
+
+### Docker Compose Control
+The Docker Compose stack can be controled using the following
+
+- Make sure you switch into the project directory first
+```
+cd laravel-rest-docker
+```
+
+- To bring up the stack the first time
+```
+docker-compose up 
+```
+- To stop up the stack the without destroying it
+```
+docker-compose stop
+```
+- To start up the stack after it has been stopped
+```
+docker-compose start
+```
+- To destory the stack
+```
+docker-compose down
+```
+
+
 
 ## Online API Definitions
 This is an online API map and example usage using a command line [curl] tool
